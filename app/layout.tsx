@@ -1,43 +1,29 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300","400","500","600","700"],
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
-  title: "My Website",
-  description: "Next.js 13.5.6 starter",
+  title: "Masum Billah Sifat — Portfolio",
+  description: "Personal portfolio built with Next.js 13.5.6",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header className="site-header">
-          <div className="container header-inner">
-            <a className="brand" href="/">
-              MySite
-            </a>
-
-            <nav className="nav">
-              <a href="/">Home</a>
-              <a href="/about">About</a>
-              <a href="/contact">Contact</a>
-            </nav>
-          </div>
-        </header>
-
-        <main className="container main">{children}</main>
-
-        <footer className="site-footer">
-          <div className="container footer-inner">
-            <p>© {new Date().getFullYear()} MySite. All rights reserved.</p>
-          </div>
-        </footer>
+      <body className={poppins.variable}>
+        <Navbar />
+        <ScrollReveal />
+        <main id="main">{children}</main>
+        <Footer />
       </body>
     </html>
   );
