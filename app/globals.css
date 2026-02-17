@@ -1061,3 +1061,142 @@ input:focus, textarea:focus{
 @media (max-width: 980px){
   .gallery{ grid-template-columns: 1fr; }
 }
+
+
+
+
+/* ---------- Project page: YouTube embed sizing ---------- */
+.media-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+
+.media-link{
+  color: rgba(255,255,255,.86);
+  font-weight: 650;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+.media-link:hover{
+  border-bottom-color: rgba(124,156,255,.60);
+}
+
+.video-frame{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+}
+
+.video-frame iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* keep mp4 video also sane */
+.video{
+  display:block;
+  width:100%;
+  max-width:100%;
+}
+
+/* ---------- Gallery: make tiles clickable buttons ---------- */
+.gallery-btn{
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.gallery-btn:focus-visible{
+  outline: 2px solid rgba(124,156,255,.60);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+/* ---------- Lightbox modal ---------- */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.lightbox-panel{
+  position: relative;
+  width: min(1120px, 96vw);
+}
+
+.lightbox-media{
+  position: relative;
+  width: 100%;
+  height: min(72vh, 720px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.35);
+  box-shadow: 0 30px 90px rgba(0,0,0,.55);
+}
+
+.lightbox-img{
+  object-fit: contain;
+}
+
+.lightbox-close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.lightbox-nav{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.92);
+  font-size: 26px;
+  font-weight: 800;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.lightbox-prev{ left: 10px; }
+.lightbox-next{ right: 10px; }
+
+.lightbox-caption{
+  margin-top: 10px;
+  color: rgba(255,255,255,.78);
+  font-weight: 650;
+  font-size: 14px;
+  text-align: center;
+}
