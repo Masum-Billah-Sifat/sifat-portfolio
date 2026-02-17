@@ -30,15 +30,15 @@ export const profile = {
   name: "Masum Billah Sifat",
   role: "Software Engineer • CS & Engineering",
   location: "Bangladesh",
-  email: "masum@example.com",
-  phone: "+880 1XXXXXXXXX",
+  email: "m.sifat1666690@gmail.com",
+  phone: "+880 1841618081",
   avatar: "/me.jpg", // put your image at public/me.jpg
   headline:
     "I build clean, high-performance web apps with strong product thinking and production-grade engineering.",
   socials: [
-    { label: "GitHub", href: "https://github.com/your-username" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/your-username" },
-    { label: "Email", href: "mailto:masum@example.com" },
+    { label: "GitHub", href: "https://github.com/Masum-Billah-Sifat" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/sifat-undefined-790513357/" },
+    { label: "Email", href: "m.sifat1666690@gmail.com" },
   ] satisfies SocialLink[],
   highlights: [
     { label: "Focus", value: "Full-stack product engineering" },
