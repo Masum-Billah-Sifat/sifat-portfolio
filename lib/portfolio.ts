@@ -1,140 +1,3 @@
-// export type SocialLink = {
-//   label: string;
-//   href: string;
-// };
-
-// export type ProjectLink = {
-//   label: string;
-//   href: string;
-// };
-
-// export type Project = {
-//   slug: string;
-//   title: string;
-//   shortDescription: string;
-//   description: string;
-//   tags: string[];
-
-//   // Home page card assets
-//   coverImage: string; // e.g. "/projects/project-one/cover.jpg"
-//   previewImages: string[]; // small set for carousel card
-
-//   // Project page assets
-//   images: string[];
-//   video?: string; // e.g. "/projects/project-one/demo.mp4"
-
-//   links: ProjectLink[]; // code + live + docs etc.
-// };
-
-// export const profile = {
-//   name: "Masum Billah Sifat",
-//   role: "Software Engineer • CS & Engineering",
-//   location: "Bangladesh",
-//   email: "m.sifat1666690@gmail.com",
-//   phone: "+880 1841618081",
-//   avatar: "/me.jpg", // put your image at public/me.jpg
-//   headline:
-//     "I build clean, high-performance web apps with strong product thinking and production-grade engineering.",
-//   socials: [
-//     { label: "GitHub", href: "https://github.com/Masum-Billah-Sifat" },
-//     { label: "LinkedIn", href: "https://www.linkedin.com/in/sifat-undefined-790513357/" },
-//     { label: "Email", href: "m.sifat1666690@gmail.com" },
-//   ] satisfies SocialLink[],
-//   highlights: [
-//     { label: "Focus", value: "Full-stack product engineering" },
-//     { label: "Stack", value: "Next.js • Go • PostgreSQL" },
-//     { label: "Strength", value: "Systems + UX polish" },
-//   ],
-// };
-
-// export const about = {
-//   title: "About",
-//   body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-// Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-// Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-// Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-// Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-//   bullets: [
-//     "Build fast, responsive web experiences with clean UI and strong accessibility.",
-//     "Design scalable APIs and backend workflows with reliability in mind.",
-//     "Ship production features: auth, payments, data pipelines, dashboards.",
-//   ],
-// };
-
-// export const skills = [
-//   "Next.js (App Router)",
-//   "React",
-//   "TypeScript",
-//   "Node.js",
-//   "Golang",
-//   "PostgreSQL",
-//   "REST APIs",
-//   "System Design",
-//   "Docker",
-//   "CI/CD",
-// ];
-
-// export const projects: Project[] = [
-//   {
-//     slug: "tanmore-commerce",
-//     title: "Tanmore Commerce Platform",
-//     shortDescription:
-//       "E-commerce platform with modern UI, auth, scalable backend, and clean data flow.",
-//     description:
-//       "A production-oriented commerce platform featuring authentication, role modes, cart flows, and an extensible product pipeline. Built with a focus on reliability, performance, and maintainable architecture.",
-//     tags: ["Next.js", "TypeScript", "Go", "PostgreSQL"],
-//     coverImage: "/projects/tanmore/cover.jpg",
-//     previewImages: [
-//       "/projects/tanmore/1.jpg",
-//       "/projects/tanmore/2.jpg",
-//       "/projects/tanmore/3.jpg",
-//       "/projects/tanmore/4.jpg",
-//     ],
-//     images: [
-//       "/projects/tanmore/1.jpg",
-//       "/projects/tanmore/2.jpg",
-//       "/projects/tanmore/3.jpg",
-//       "/projects/tanmore/4.jpg",
-//     ],
-//     video: "/projects/tanmore/demo.mp4",
-//     links: [
-//       { label: "Codebase", href: "https://github.com/your-username/tanmore" },
-//       { label: "Live Demo", href: "https://example.com" },
-//     ],
-//   },
-//   {
-//     slug: "geospatial-risk-mapper",
-//     title: "Geospatial Risk Mapper",
-//     shortDescription:
-//       "A mapping dashboard for vulnerability/risk storytelling using clean visuals and modular data layers.",
-//     description:
-//       "A clean, modular geospatial visualization project designed for reporting and decision support. Emphasizes clarity, responsiveness, and readable UI patterns.",
-//     tags: ["GIS", "Data", "Visualization"],
-//     coverImage: "/projects/gis/cover.jpg",
-//     previewImages: [
-//       "/projects/gis/1.jpg",
-//       "/projects/gis/2.jpg",
-//       "/projects/gis/3.jpg",
-//       "/projects/gis/4.jpg",
-//     ],
-//     images: [
-//       "/projects/gis/1.jpg",
-//       "/projects/gis/2.jpg",
-//       "/projects/gis/3.jpg",
-//       "/projects/gis/4.jpg",
-//     ],
-//     video: "/projects/gis/demo.mp4",
-//     links: [
-//       {
-//         label: "Codebase",
-//         href: "https://github.com/your-username/gis-mapper",
-//       },
-//       { label: "Live Demo", href: "https://example.com" },
-//     ],
-//   },
-// ];
-
-
 export type SocialLink = {
   label: string;
   href: string;
@@ -149,18 +12,20 @@ export type Project = {
   slug: string;
   title: string;
   shortDescription: string;
-  description: string;
+
+  // full page content
+  description: string;       // paragraph only
+  highlights: string[];      // bullet points
+
   tags: string[];
 
-  // Home page card assets
-  coverImage: string; // e.g. "/projects/project-one/cover.jpg"
-  previewImages: string[]; // small set for carousel card
+  coverImage: string;
+  previewImages: string[];
 
-  // Project page assets
   images: string[];
-  video?: string; // can be "/path/demo.mp4" OR a YouTube URL (youtu.be / watch?v= / embed)
+  video?: string; // YouTube URL or local mp4
 
-  links: ProjectLink[]; // code + live + docs etc.
+  links: ProjectLink[]; // multiple links allowed
 };
 
 export const profile = {
@@ -189,15 +54,13 @@ export const profile = {
 
 export const about = {
   title: "About",
-  body: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+  body: `I started my web development journey in 2022 with HTML, CSS, and JavaScript, then progressed into React and Next.js. Since then, I’ve built 100+ web applications independently—focusing on clean UI, responsiveness, and production-grade engineering. I also have strong experience integrating machine learning models into real web products, backed by solid mathematical foundations. Right now, I’m building Tanmore: a production-ready multi-seller commerce platform for leather goods across Bangladesh.`,
   bullets: [
-    "Build fast, responsive web experiences with clean UI and strong accessibility.",
-    "Design scalable APIs and backend workflows with reliability in mind.",
-    "Ship production features: auth, payments, data pipelines, dashboards.",
+    "100+ web applications built end-to-end (design → frontend → backend integration)",
+    "Strong React/Next.js foundations with emphasis on performance and UX polish",
+    "Experience shipping AI/ML features into real web applications (model → API → UI)",
+    "Solid math background (helps with ML, optimization, and technical problem-solving)",
+    "Currently building Tanmore, a Daraz-style multi-seller platform for leather products in Bangladesh",
   ],
 };
 
@@ -219,9 +82,17 @@ export const projects: Project[] = [
     slug: "tanmore-commerce",
     title: "Tanmore Commerce Platform",
     shortDescription:
-      "E-commerce platform with modern UI, auth, scalable backend, and clean data flow.",
+      "Production-grade multi-seller e-commerce platform with secure auth, full checkout flow, and seller dashboards.",
     description:
-      "A production-oriented commerce platform featuring authentication, role modes, cart flows, and an extensible product pipeline. Built with a focus on reliability, performance, and maintainable architecture.",
+      "Tanmore is a production-grade, multi-seller e-commerce platform built to sell leather products across Bangladesh. It is designed with scalable architecture, secure authentication, and complete commerce workflows—built to feel like a real-world marketplace from day one.",
+    highlights: [
+      "Secure Google OAuth login with access/refresh tokens and strict session handling",
+      "Complete commerce flow: cart, address, checkout, and order confirmation",
+      "Multi-seller tooling: product management, reviews visibility, and order tracking",
+      "PostgreSQL-backed data model designed for production use",
+      "Media upload pipeline for product assets (images/videos) with scalable storage approach",
+      "Status: active development (not publicly deployed yet), preparing for launch",
+    ],
     tags: ["Next.js", "TypeScript", "Go", "PostgreSQL"],
     coverImage: "/projects/tanmore/cover.jpg",
     previewImages: [
@@ -236,21 +107,28 @@ export const projects: Project[] = [
       "/projects/tanmore/3.jpg",
       "/projects/tanmore/4.jpg",
     ],
-    // put your Tanmore YouTube link here
     video: "https://youtu.be/yd9uQeV99EM",
     links: [
-      { label: "Codebase", href: "https://github.com/your-username/tanmore" },
-      { label: "Live Demo", href: "https://example.com" },
+      { label: "Frontend Repo", href: "https://github.com/Masum-Billah-Sifat/leather_tanmore_marketplace_frontend" },
+      { label: "Backend Repo", href: "https://github.com/Masum-Billah-Sifat/Tanmore_leather_marketplace_backend" },
+      // { label: "Live Demo (Soon)", href: "https://example.com" },
     ],
   },
   {
     slug: "geospatial-risk-mapper",
-    title: "Geospatial Risk Mapper",
+    title: "Business Portfolio Website (Iraq)",
     shortDescription:
-      "A mapping dashboard for vulnerability/risk storytelling using clean visuals and modular data layers.",
+      "Deployed business portfolio website optimized for SEO and lead generation, built to support real contract outreach.",
     description:
-      "A clean, modular geospatial visualization project designed for reporting and decision support. Emphasizes clarity, responsiveness, and readable UI patterns.",
-    tags: ["GIS", "Data", "Visualization"],
+      "A professional portfolio website built for a businessman based in Iraq—designed to present services clearly, build credibility, and support international client outreach. The site was structured for SEO so it can rank for targeted keywords in Google.",
+    highlights: [
+      "Modern, responsive UI with strong credibility and clear service presentation",
+      "SEO-focused structure: metadata, keyword-oriented sections, and performance-friendly pages",
+      "Content layout designed for conversion and client trust",
+      "Deployed and publicly accessible",
+      "Helped support outreach that contributed to a Bangladesh-related contract",
+    ],
+    tags: ["Next.js", "SEO", "Responsive UI"],
     coverImage: "/projects/gis/cover.jpg",
     previewImages: [
       "/projects/gis/1.jpg",
@@ -264,14 +142,10 @@ export const projects: Project[] = [
       "/projects/gis/3.jpg",
       "/projects/gis/4.jpg",
     ],
-    // put your GIS YouTube link here
     video: "https://youtu.be/cgWtokzvNvo",
     links: [
-      {
-        label: "Codebase",
-        href: "https://github.com/your-username/gis-mapper",
-      },
-      { label: "Live Demo", href: "https://example.com" },
+      { label: "Live Website", href: "https://www.ebdaaaltakwenco.com/" },
+      { label: "Frontend Repo", href: "https://github.com/Masum-Billah-Sifat/iqbaltaqween" },
     ],
   },
 ];

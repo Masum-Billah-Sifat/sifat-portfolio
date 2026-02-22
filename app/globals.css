@@ -1200,3 +1200,19 @@ input:focus, textarea:focus{
   font-size: 14px;
   text-align: center;
 }
+
+.project-highlights{
+  margin-top: 16px;
+}
+
+.project-bullets{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,.82);
+  line-height: 1.75;
+  font-size: 15.5px;
+}
+
+.project-bullets li{
+  margin: 8px 0;
+}

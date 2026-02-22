@@ -2,7 +2,25 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/lib/portfolio";
 
+function pickPrimaryLink(project: Project) {
+  const preferredLabels = [
+    "Live",
+    "Live Demo",
+    "Live Website",
+    "Demo",
+    "Website",
+  ];
+
+  const preferred = project.links.find((l) =>
+    preferredLabels.some((p) => l.label.toLowerCase().includes(p.toLowerCase()))
+  );
+
+  return preferred ?? project.links[0] ?? null;
+}
+
 export default function ProjectCard({ project }: { project: Project }) {
+  const primary = pickPrimaryLink(project);
+
   return (
     <article className="project-card" data-card>
       <div className="project-cover">
@@ -48,14 +66,15 @@ export default function ProjectCard({ project }: { project: Project }) {
           <Link className="btn btn-primary btn-sm" href={`/projects/${project.slug}`}>
             View Details
           </Link>
-          {project.links[0] && (
+
+          {primary && (
             <a
               className="btn btn-ghost btn-sm"
-              href={project.links[0].href}
+              href={primary.href}
               target="_blank"
               rel="noreferrer"
             >
-              {project.links[0].label}
+              {primary.label}
             </a>
           )}
         </div>
