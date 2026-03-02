@@ -14,8 +14,8 @@ export type Project = {
   shortDescription: string;
 
   // full page content
-  description: string;       // paragraph only
-  highlights: string[];      // bullet points
+  description: string; // paragraph only
+  highlights: string[]; // bullet points
 
   tags: string[];
 
@@ -75,6 +75,9 @@ export const skills = [
   "System Design",
   "Docker",
   "CI/CD",
+  "Prisma ORM",
+  "Express js",
+  "Supabase",
 ];
 
 export const projects: Project[] = [
@@ -109,11 +112,81 @@ export const projects: Project[] = [
     ],
     video: "https://youtu.be/yd9uQeV99EM",
     links: [
-      { label: "Frontend Repo", href: "https://github.com/Masum-Billah-Sifat/leather_tanmore_marketplace_frontend" },
-      { label: "Backend Repo", href: "https://github.com/Masum-Billah-Sifat/Tanmore_leather_marketplace_backend" },
+      {
+        label: "Frontend Repo",
+        href: "https://github.com/Masum-Billah-Sifat/leather_tanmore_marketplace_frontend",
+      },
+      {
+        label: "Backend Repo",
+        href: "https://github.com/Masum-Billah-Sifat/Tanmore_leather_marketplace_backend",
+      },
       // { label: "Live Demo (Soon)", href: "https://example.com" },
     ],
   },
+
+  // ✅ NEW PROJECT (added)
+  {
+    slug: "saas-file-management-system",
+    title: "SaaS File Management System (Subscription-Based)",
+    shortDescription:
+      "Subscription-based file & folder manager with strict plan enforcement, admin package control, and Supabase-backed uploads.",
+    description:
+      "A full-featured SaaS-style file and folder management system where an admin dynamically defines subscription packages (Free/Silver/Gold/Diamond). Every user action is enforced by the active package—folder limits, nesting depth, allowed file types, max upload size, total files per account, and files per folder. Users can manage nested folders and upload/preview/download/rename/archive files with consistent rule enforcement.",
+    highlights: [
+      "Admin panel to create/update/deactivate subscription packages with dynamic limits (no hardcoded rules)",
+      "Strict enforcement on every action: max folders, max nesting, allowed types, max file size, total file limit, files per folder",
+      "User subscription switching with history tracking (new limits apply forward; existing data preserved)",
+      "Folder management: create / rename / archive with subtree archival handling",
+      "File management: upload (Supabase Storage), preview (image/pdf/video/audio), download, rename, archive",
+      "Auth system with seeded admin, role-based routing/guards, and session revocation on logout",
+      "Bonus: mock email verification + mock password reset for USER accounts (admin reset intentionally disabled)",
+      "Test Admin Credentials: admin@zoomit.com / Admin@12345",
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase",
+    ],
+    coverImage: "/projects/saas-file/cover.jpg", // TODO: replace
+    previewImages: [
+      "/projects/saas-file/1.jpg", // TODO: replace
+      "/projects/saas-file/2.jpg", // TODO: replace
+      "/projects/saas-file/3.jpg", // TODO: replace
+      "/projects/saas-file/4.jpg", // TODO: replace
+    ],
+    images: [
+      "/projects/saas-file/1.jpg", // TODO: replace
+      "/projects/saas-file/2.jpg", // TODO: replace
+      "/projects/saas-file/3.jpg", // TODO: replace
+      "/projects/saas-file/4.jpg", // TODO: replace
+      "/projects/saas-file/5.jpg", // TODO: replace
+      "/projects/saas-file/6.jpg", // TODO: replace
+    ],
+    video: "https://youtu.be/3Xj2-vG7cMs", // TODO: add if you want
+    links: [
+      {
+        label: "Live Frontend",
+        href: "https://saas-file-management-system-fronten.vercel.app/",
+      },
+      {
+        label: "Live Backend",
+        href: "https://saas-file-management-system.onrender.com",
+      },
+      {
+        label: "Frontend Repo",
+        href: "https://github.com/Masum-Billah-Sifat/saas-file-management-system-frontend",
+      },
+      {
+        label: "Backend Repo",
+        href: "https://github.com/Masum-Billah-Sifat/saas-file-management-system",
+      },
+    ],
+  },
+
   {
     slug: "geospatial-risk-mapper",
     title: "Business Portfolio Website (Iraq)",
@@ -145,7 +218,10 @@ export const projects: Project[] = [
     video: "https://youtu.be/cgWtokzvNvo",
     links: [
       { label: "Live Website", href: "https://www.ebdaaaltakwenco.com/" },
-      { label: "Frontend Repo", href: "https://github.com/Masum-Billah-Sifat/iqbaltaqween" },
+      {
+        label: "Frontend Repo",
+        href: "https://github.com/Masum-Billah-Sifat/iqbaltaqween",
+      },
     ],
   },
 ];
